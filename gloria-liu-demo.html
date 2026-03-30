@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gloria Liu — Your Next Chapter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF6;
+    --gold: #B8966A;
+    --gold-light: #D4B896;
+    --charcoal: #2C2825;
+    --text-mid: #6B5F54;
+    --text-light: #9C8E83;
+    --border: rgba(184,150,106,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+    background: rgba(253,250,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--charcoal);
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--text-mid);
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-lang {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+  }
+
+  .nav-lang a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  .nav-lang a:hover, .nav-lang a.active { color: var(--gold); }
+
+  .nav-lang span { opacity: 0.4; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 88px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 60px;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border) 30%, var(--border) 70%, transparent);
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 5vw, 76px);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 2.2vw, 32px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-mid);
+    margin-bottom: 40px;
+    line-height: 1.4;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 420px;
+    margin-bottom: 52px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--charcoal);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 16px 32px;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold);
+  }
+
+  .btn-primary svg {
+    transition: transform 0.3s;
+  }
+
+  .btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--text-mid);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  .hero-credentials {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 40px;
+  }
+
+  .credential-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .credential-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .credential-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    text-transform: uppercase;
+  }
+
+  /* ── HERO RIGHT ── */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image-wrap {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.88) saturate(0.9);
+  }
+
+  .hero-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(44,40,37,0.15) 0%, transparent 60%);
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 48px;
+    left: 40px;
+    background: rgba(253,250,246,0.95);
+    backdrop-filter: blur(8px);
+    padding: 24px 28px;
+    border-left: 3px solid var(--gold);
+    max-width: 280px;
+  }
+
+  .hero-badge-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .hero-badge-attr {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* ── SERVICES STRIP ── */
+  .services-strip {
+    background: var(--charcoal);
+    padding: 24px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .strip-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* ── INTRO SECTION ── */
+  .intro {
+    padding: 120px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .intro-left {
+    position: relative;
+  }
+
+  .intro-image-wrap {
+    position: relative;
+  }
+
+  .intro-image-main {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .intro-image-accent {
+    position: absolute;
+    bottom: -32px;
+    right: -32px;
+    width: 55%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 6px solid var(--warm-white);
+  }
+
+  .intro-tag {
+    position: absolute;
+    top: 32px;
+    left: -20px;
+    background: var(--gold);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+
+  /* Placeholder for images */
+  .img-placeholder {
+    background: linear-gradient(135deg, #E8DDD4 0%, #D4C4B5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+
+  .intro-right {}
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 3.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+  }
+
+  .intro-heading em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .intro-body {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+  }
+
+  .intro-languages {
+    display: flex;
+    gap: 8px;
+    margin-top: 36px;
+    margin-bottom: 40px;
+  }
+
+  .lang-tag {
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--text-mid);
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .services-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 72px;
+  }
+
+  .services-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 3.5vw, 52px);
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .services-subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: var(--warm-white);
+    padding: 52px 44px;
+    position: relative;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+
+  .service-card:hover {
+    background: var(--charcoal);
+  }
+
+  .service-card:hover .service-num,
+  .service-card:hover .service-name,
+  .service-card:hover .service-desc {
+    color: var(--cream);
+  }
+
+  .service-card:hover .service-icon-line {
+    background: var(--gold);
+  }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 32px;
+    transition: color 0.4s;
+  }
+
+  .service-icon-line {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 32px;
+    transition: background 0.4s;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    transition: color 0.4s;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-mid);
+    transition: color 0.4s;
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-section {
+    padding: 120px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .testimonial-quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    line-height: 0.6;
+    color: var(--gold);
+    opacity: 0.3;
+    margin-bottom: 32px;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 2.5vw, 34px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 40px;
+  }
+
+  .testimonial-author {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 48px;
+  }
+
+  .t-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .t-dot.active {
+    background: var(--gold);
+    width: 24px;
+    border-radius: 3px;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--charcoal);
+    padding: 100px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .cta-left {}
+
+  .cta-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 3.5vw, 56px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .cta-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .cta-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(247,243,238,0.65);
+    line-height: 1.75;
+  }
+
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cta-form-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .cta-input {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(184,150,106,0.3);
+    padding: 16px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--cream);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .cta-input::placeholder { color: rgba(247,243,238,0.3); }
+  .cta-input:focus { border-color: var(--gold); }
+
+  .cta-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--cream);
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 18px 36px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .btn-gold:hover {
+    background: var(--gold-light);
+  }
+
+  /* ── LANGUAGE TOGGLE DEMO ── */
+  .lang-note {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--gold);
+    color: white;
+    padding: 12px 20px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    border-top: 1px solid rgba(184,150,106,0.15);
+    padding: 48px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-info {
+    font-size: 13px;
+    color: rgba(247,243,238,0.45);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .footer-contact {
+    font-size: 13px;
+    color: var(--gold-light);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-left > *:nth-child(6) { animation-delay: 0.65s; }
+
+  .hero-right {
+    animation: fadeUp 1.1s 0.3s ease both;
+  }
+
+  /* ── CHINESE VERSION (hidden by default) ── */
+  .zh { display: none; }
+  body.lang-zh .en { display: none; }
+  body.lang-zh .zh { display: block; }
+  body.lang-zh .zh-inline { display: inline; }
+  body.lang-zh .en-inline { display: none; }
+  .zh-inline { display: none; }
+  .en-inline { display: inline; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Gloria Liu <span>·</span> <span class="en-inline">Your Next Chapter</span><span class="zh-inline">您的人生新篇章</span></div>
+  <ul class="nav-links">
+    <li><a href="#" class="en">Downsizing</a><a href="#" class="zh" style="display:none">缩房服务</a></li>
+    <li><a href="#" class="en">Buy</a><a href="#" class="zh" style="display:none">购房</a></li>
+    <li><a href="#" class="en">Sell</a><a href="#" class="zh" style="display:none">卖房</a></li>
+    <li><a href="#" class="en">Listings</a><a href="#" class="zh" style="display:none">房源</a></li>
+    <li><a href="#" class="en">About</a><a href="#" class="zh" style="display:none">关于我</a></li>
+  </ul>
+  <div class="nav-lang">
+    <a href="#" class="active" onclick="setLang('en',this)">EN</a>
+    <span>|</span>
+    <a href="#" onclick="setLang('zh',this)">中文</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="en-inline">Oakville Senior Real Estate Specialist</span>
+      <span class="zh-inline">奥克维尔资深地产顾问</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="en-inline">Every home holds<br>a <em>lifetime</em> of<br>memories.</span>
+      <span class="zh-inline">每个家，<br>都承载着<br>一生的<em>记忆</em>。</span>
+    </h1>
+
+    <p class="hero-subtitle en-inline">I'll help you honour them.</p>
+    <p class="hero-subtitle zh-inline">我来帮您好好道别，再好好出发。</p>
+
+    <p class="hero-desc">
+      <span class="en-inline">Specializing in downsizing for Oakville families, I offer concierge-level care through every step — so your next chapter begins with peace of mind, not paperwork.</span>
+      <span class="zh-inline">专注于奥克维尔家庭的缩房服务，从整理到过户，我全程陪伴、事无巨细，让您的新起点从容开始，而不是被文件淹没。</span>
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <span class="en-inline">Book a Free Consultation</span>
+        <span class="zh-inline">预约免费咨询</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" class="btn-secondary">
+        <span class="en-inline">Free Home Evaluation</span>
+        <span class="zh-inline">免费房产估价</span>
+      </a>
+    </div>
+
+    <div class="hero-credentials">
+      <div class="credential-item">
+        <div class="credential-number">7+</div>
+        <div class="credential-label en">Years in Oakville</div>
+        <div class="credential-label zh" style="display:none">奥克维尔经验</div>
+      </div>
+      <div class="credential-item">
+        <div class="credential-number">$2B+</div>
+        <div class="credential-label en">In Transactions</div>
+        <div class="credential-label zh" style="display:none">交易总额</div>
+      </div>
+      <div class="credential-item">
+        <div class="credential-number">3</div>
+        <div class="credential-label en">Languages Spoken</div>
+        <div class="credential-label zh" style="display:none">服务语言</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-image-wrap">
+      <img src="https://glorialiu.ca/wp-content/uploads/2026/03/glorialiu_realtor03.jpg" alt="Gloria Liu — Oakville Real Estate" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <div class="hero-image-overlay"></div>
+    </div>
+
+    <div class="hero-badge">
+      <div class="hero-badge-quote en">"I treat your home as if it were my own parents'."</div>
+      <div class="hero-badge-quote zh" style="display:none">「我对待您的家，就像对待我父母的家一样。」</div>
+      <div class="hero-badge-attr">— Gloria Liu · Royal LePage</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="services-strip">
+  <div class="strip-item en">Senior Downsizing</div>
+  <div class="strip-item zh" style="display:none">缩房专家</div>
+  <div class="strip-dot"></div>
+  <div class="strip-item en">Luxury Listings</div>
+  <div class="strip-item zh" style="display:none">豪宅上市</div>
+  <div class="strip-dot"></div>
+  <div class="strip-item en">Concierge Real Estate</div>
+  <div class="strip-item zh" style="display:none">礼宾式服务</div>
+  <div class="strip-dot"></div>
+  <div class="strip-item en">English · Cantonese · Mandarin</div>
+  <div class="strip-item zh" style="display:none">英语 · 粤语 · 普通话</div>
+</div>
+
+<!-- INTRO / ABOUT -->
+<section style="background:var(--warm-white);padding:120px 60px;">
+  <div class="intro" style="padding:0;">
+    <div class="intro-left">
+      <div class="intro-image-wrap">
+        <img src="https://glorialiu.ca/wp-content/uploads/2025/11/glorialiu_photos6-683x1024.jpg" alt="Gloria Liu" class="intro-image-main" style="object-position:center top;">
+        <img src="https://glorialiu.ca/wp-content/uploads/2026/03/Downsizing25-1024x687.jpg" alt="Downsizing consultation" class="intro-image-accent">
+        <div class="intro-tag">About Gloria</div>
+      </div>
+    </div>
+
+    <div class="intro-right">
+      <div class="section-label">
+        <span class="en-inline">Meet Your Agent</span>
+        <span class="zh-inline">关于我</span>
+      </div>
+
+      <h2 class="intro-heading">
+        <span class="en-inline">More than a deal —<br>a <em>trusted advisor</em><br>for life's biggest move.</span>
+        <span class="zh-inline">不只是一笔交易——<br>是陪您走过<br>人生<em>最重要一步</em>的人。</span>
+      </h2>
+
+      <p class="intro-body">
+        <span class="en-inline">Gloria Liu has spent over seven years building a reputation in Oakville not just as a skilled negotiator, but as a genuinely caring partner for families navigating one of life's most emotional transitions: leaving the family home.</span>
+        <span class="zh-inline">刘嘉华在奥克维尔深耕逾七年，不仅以谈判实力著称，更以真诚的陪伴赢得口碑——专为那些即将告别家庭老宅的长辈，提供情感细腻、流程周全的全程支持。</span>
+      </p>
+      <p class="intro-body">
+        <span class="en-inline">With a background in business and hospitality, she brings warmth, precision, and an eye for detail that ensures nothing falls through the cracks — from staging and decluttering to closing day.</span>
+        <span class="zh-inline">凭借商业与服务业背景，她将温度、精准与细节管理融为一体——从房屋整理、布置，到签约成交，每一个环节都亲力亲为，绝不遗漏。</span>
+      </p>
+
+      <div class="intro-languages">
+        <div class="lang-tag">English</div>
+        <div class="lang-tag">粤語</div>
+        <div class="lang-tag">普通話</div>
+      </div>
+
+      <a href="#" class="btn-primary" style="display:inline-flex;">
+        <span class="en-inline">Get to Know Gloria</span>
+        <span class="zh-inline">了解更多</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="services-header">
+    <div class="section-label" style="justify-content:center;">
+      <span class="en-inline">How I Can Help</span>
+      <span class="zh-inline">我的服务</span>
+    </div>
+    <h2 class="services-title">
+      <span class="en-inline">Your real estate journey, handled with care</span>
+      <span class="zh-inline">您的地产之旅，由我全程用心打理</span>
+    </h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon-line"></div>
+      <h3 class="service-name en">Senior<br>Downsizing</h3>
+      <h3 class="service-name zh" style="display:none">长辈<br>缩房服务</h3>
+      <p class="service-desc en">A white-glove service for families ready to simplify. From decluttering to closing, we handle everything with sensitivity and respect.</p>
+      <p class="service-desc zh" style="display:none">为准备精简生活的家庭提供全程贴心服务。从整理清空到完成过户，每一步都轻柔而周到。</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon-line"></div>
+      <h3 class="service-name en">Selling Your<br>Home</h3>
+      <h3 class="service-name zh" style="display:none">出售<br>您的房产</h3>
+      <p class="service-desc en">Strategic pricing, professional staging, and maximum market exposure to ensure you achieve the best possible outcome.</p>
+      <p class="service-desc zh" style="display:none">精准定价、专业布置、最大曝光——确保您以最理想的价格顺利成交。</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon-line"></div>
+      <h3 class="service-name en">Buying Your<br>Next Home</h3>
+      <h3 class="service-name zh" style="display:none">寻找<br>下一个家</h3>
+      <p class="service-desc en">Whether upsizing, relocating, or finding the perfect condo — we navigate the market so you find a home that truly fits your next chapter.</p>
+      <p class="service-desc zh" style="display:none">无论是换大房、搬迁还是置业公寓，我们帮您在市场中找到真正适合您新生活的家。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="testimonial-quote-mark">"</div>
+  <p class="testimonial-text en">
+    "Gloria's extensive knowledge of the real estate market has been invaluable. She consistently goes above and beyond to ensure we sold our property at the expected price."
+  </p>
+  <p class="testimonial-text zh" style="display:none">
+    「Gloria的市场知识令我们获益匪浅。她始终超出预期，帮助我们以理想价格顺利出售房产。」
+  </p>
+  <div class="testimonial-author">— Charlene Zhou · Seller, Oakville</div>
+  <div class="testimonial-dots">
+    <div class="t-dot active"></div>
+    <div class="t-dot"></div>
+    <div class="t-dot"></div>
+  </div>
+</section>
+
+<!-- FULL WIDTH IMAGE BREAK -->
+<div style="height:480px;overflow:hidden;position:relative;">
+  <img src="https://glorialiu.ca/wp-content/uploads/2026/03/image_1600x1068_9-1024x684.jpg" 
+       alt="Oakville home" 
+       style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.75) saturate(0.85);">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+    <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;">Oakville · Ontario</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,56px);font-weight:300;color:#FDFAF6;line-height:1.2;">
+      <span class="en-inline">Where your story continues.</span>
+      <span class="zh-inline">您的故事，在这里续写。</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <div class="cta-left">
+    <div class="cta-eyebrow en">Start the Conversation</div>
+    <div class="cta-eyebrow zh" style="display:none">开始对话</div>
+
+    <h2 class="cta-title">
+      <span class="en-inline">Ready to begin<br>your <em>next chapter?</em></span>
+      <span class="zh-inline">准备好开启<br>您的<em>人生新篇章</em>了吗？</span>
+    </h2>
+
+    <p class="cta-desc">
+      <span class="en-inline">Book a complimentary 30-minute consultation. No pressure, no obligation — just a conversation about what comes next.</span>
+      <span class="zh-inline">预约30分钟免费咨询，无任何压力，只是一次关于未来的轻松对话。</span>
+    </p>
+  </div>
+
+  <div class="cta-right">
+    <div class="cta-form-row">
+      <div>
+        <label class="cta-form-label en">First Name</label>
+        <label class="cta-form-label zh" style="display:none">名字</label>
+        <input class="cta-input" type="text" placeholder="Gloria">
+      </div>
+      <div>
+        <label class="cta-form-label en">Last Name</label>
+        <label class="cta-form-label zh" style="display:none">姓氏</label>
+        <input class="cta-input" type="text" placeholder="Liu">
+      </div>
+    </div>
+    <div>
+      <label class="cta-form-label en">Phone or Email</label>
+      <label class="cta-form-label zh" style="display:none">电话或邮箱</label>
+      <input class="cta-input" type="text" placeholder="647-568-2257">
+    </div>
+    <div>
+      <label class="cta-form-label en">How can I help?</label>
+      <label class="cta-form-label zh" style="display:none">您有什么需求？</label>
+      <input class="cta-input" type="text" placeholder="Downsizing, Buying, Selling...">
+    </div>
+    <button class="btn-gold">
+      <span class="en-inline">Send Message</span>
+      <span class="zh-inline">发送消息</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Gloria Liu <span>·</span> Your Next Chapter</div>
+  <div class="footer-info">Royal LePage · Oakville · 647-568-2257<br>© 2026 Gloria Liu. All rights reserved.</div>
+  <div class="footer-contact"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31565d5e4358505d584471435e48505d5d54415056541f5250">[email&#160;protected]</a></div>
+</footer>
+
+<!-- LANG NOTE -->
+<div class="lang-note">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="white" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+  <span class="en-inline">中文版 available — click 中文 in nav</span>
+  <span class="zh-inline">English version — click EN in nav</span>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function setLang(lang, el) {
+    document.body.className = lang === 'zh' ? 'lang-zh' : '';
+
+    // nav links
+    document.querySelectorAll('.nav-links .en').forEach(a => a.style.display = lang === 'zh' ? 'none' : '');
+    document.querySelectorAll('.nav-links .zh').forEach(a => a.style.display = lang === 'zh' ? '' : 'none');
+
+    // service cards
+    document.querySelectorAll('.service-name.en, .service-desc.en, .strip-item.en, .cta-eyebrow.en').forEach(e => e.style.display = lang === 'zh' ? 'none' : '');
+    document.querySelectorAll('.service-name.zh, .service-desc.zh, .strip-item.zh, .cta-eyebrow.zh').forEach(e => e.style.display = lang === 'zh' ? '' : 'none');
+
+    // testimonials
+    document.querySelectorAll('.testimonial-text.en').forEach(e => e.style.display = lang === 'zh' ? 'none' : '');
+    document.querySelectorAll('.testimonial-text.zh').forEach(e => e.style.display = lang === 'zh' ? '' : 'none');
+
+    // cta labels
+    document.querySelectorAll('label.cta-form-label.en').forEach(e => e.style.display = lang === 'zh' ? 'none' : '');
+    document.querySelectorAll('label.cta-form-label.zh').forEach(e => e.style.display = lang === 'zh' ? '' : 'none');
+
+    // credentials
+    document.querySelectorAll('.credential-label.en').forEach(e => e.style.display = lang === 'zh' ? 'none' : '');
+    document.querySelectorAll('.credential-label.zh').forEach(e => e.style.display = lang === 'zh' ? '' : 'none');
+
+    // intro about
+    document.querySelectorAll('.intro-right .en').forEach(e => e.style.display = lang === 'zh' ? 'none' : '');
+    document.querySelectorAll('.intro-right .zh'
